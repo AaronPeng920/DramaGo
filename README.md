@@ -33,7 +33,7 @@ librosa
 soundfile
 numpy
 scipy
-matplotlab
+matplotlib
 ```
 
 5. 安装媒体处理工具 **ffmpeg** 并将其加入到 **环境变量**，Windows 10 可以参考 [Windows 10 安装 FFmpeg 并设置环境变量](https://blog.csdn.net/Chanssl/article/details/83050959) ，MacOS 可以参考 [在 Mac 上为 FFmpeg 配置环境变量](https://zhuanlan.zhihu.com/p/137556439)。安装之后，可以在命令行输入：
@@ -50,7 +50,7 @@ ffmpeg
 
 ### （一）格式转换
 
-> 对于 **flac** 格式的音频，目前无法被 **librosa** 读取，为了避免后期出现问题，统一将音频格式转换为 **wav**
+> 对于 **flac 等格式的音频，目前无法被 **librosa** 读取，为了避免后期出现问题，统一将音频格式转换为 **wav**，由于文件名命名可能对后期造成的影响，故在其中对文件名进行去空格和去除 . 符号.
 
 1. 在 **Adapter/converter** 中，找到 **__main__**，其中有两个参数 **wav_dir** 和 **output_dir**，将其改为需要转换的音频所在的文件夹以及转换后存储到的文件夹，如果原始的音频较大存在硬盘/磁盘中，可以将将 **wav_dir** 设置为磁盘/硬盘中的存储地址，将 **output_dir** 设置为 **Audios/sources**，承接去除静音的第一步；
 2. 执行 python 文件 **Adapter/converter.py**，如果你在命令行中，可以将此项目作为工作目录，执行：
@@ -84,7 +84,7 @@ python3 Mute_remove/removeMute.py
 python3 Spliter/cut_audio.py
 ```
 
-### （四）人声和伴奏的分类
+### （四）人声和伴奏的分离
 
 ​	暂时不作处理，根据需要进行操作
 
