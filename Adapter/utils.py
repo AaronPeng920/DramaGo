@@ -11,7 +11,7 @@ def other2wav(src, output_dir, format = "wav"):
     name = os.path.splitext(basename)[0]
     filename = os.path.join(output_dir,name + "." + format)  # 输出的文件名
 
-    cmd = 'ffmpeg -i ' + src + ' ' + filename
+    cmd = 'ffmpeg -i "' + src + '" "' + filename + '"'
     os.system(cmd)  # 执行命令行
 
 """
