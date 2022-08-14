@@ -23,8 +23,9 @@ if __name__ == '__main__':
     for filename in wav_files:
         print(filename)
         type = filename.split('.')[-1]
-        if '.'+type in support and type != 'wav':
+        if '.'+type in support:
             other2wav(filename, output_dir)
         else:
-            print("暂不支持将 " + type + " 类型转为 wav 文件")
+            print("暂不支持将 " + type + " 类型的文件转换成 wav")
+            
 
