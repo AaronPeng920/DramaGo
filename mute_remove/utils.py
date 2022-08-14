@@ -106,3 +106,10 @@ def slience(filename, output_dir):
         sf.write(outputfile.format(name), slience_data, 16000)
 
         return slience_data
+
+def slience_ffmpeg(src, output_dir):
+    path, name = os.path.split(src)
+    outputfile = os.path.join(output_dir, name)
+    cmd_commond = 'ffmpeg -i "' + src + '" -af silenceremove=stop_periods=-1:stop_duration=0.2:stop_threshold=-30dB "' + outputfile + '"'
+    os.system(cmd_commond)
+

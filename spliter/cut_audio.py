@@ -15,8 +15,8 @@ def file_name(file_dir):
     return L
 
 if __name__ == '__main__':
-    wav_dir = "Audios/slience_remove"  # 需要切分的 wav 文件所在的文件夹
-    output_dir = "Audios/audio_cut"    # 切分后的文件存储的位置
+    wav_dir = "/Volumes/LenovoDisk/戏曲/豫剧/slience_remove"  # 需要切分的 wav 文件所在的文件夹
+    output_dir = "/Volumes/LenovoDisk/戏曲/豫剧//audio_cut"    # 切分后的文件存储的位置
     category = "yuju"  # 处理的音频种类
 
     stafilename = os.path.join("Statistic",category+".txt") # 统计数据文件名称
