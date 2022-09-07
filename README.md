@@ -10,10 +10,10 @@ conda -V
 
 显示版本号，则可以使用 conda。在一些情况下，需要给 conda 添加国内源镜像加速，换源方式参考 [conda 添加国内源](https://zhuanlan.zhihu.com/p/434356947)
 
-2. 创建一个名称为 _opera_ 的虚拟环境（可以自拟名称），使用到的 _python_ 版本为 3.9:
+2. 创建一个名称为 _opera_ 的虚拟环境（可以自拟名称），使用到的 _python_ 版本为 3.7:
 
 ```shell
-conda create -n opera python=3.9
+conda create -n opera python=3.7
 ```
 
 安装过程中会出现 **Proceed ([y]/n)?**，输入 **y** 后回车即可。
@@ -86,7 +86,38 @@ python3 Spliter/cut_audio.py
 
 ### （四）人声和伴奏的分离
 
-​	暂时不作处理，根据需要进行操作
+> 使用到的分离工具是 _spleeter_，需要事先安装，已经安装好的，不必再次安装。如果需要安装，参见 Github 的 [spleeter](https://github.com/deezer/spleeter) 中的 "Quick Start(快速开始)" 部分的**前两步**即可。第三步和第四步是测试安装是否成功，暂不需要。
+>
+> 使用到的 spleeter 命令格式是：
+>
+> `spleeter -p 分轨数量 -o 输出目录 音频文件路径`
+>
+> 分轨数量可以选择：
+>
+> * `spleeter:2stems`：默认，2 个轨道，人声和伴奏
+> * `spleeter:4stems`：4 个轨道，人声 + 鼓点 + 贝斯 + 其他
+> * `spleeter:5stems`：5 个轨道，人声 + 鼓点 + 贝斯 + 钢琴 + 其他
+>
+> 我们需要用到的是两个轨道。
+>
+> **需要注意的是，当前工作目录对程序是否下载预训练模型至关重要，需要确保当前工作目录下含有 `pretrained_models` 这个文件夹，并且这个文件夹下含有模型文件，这样 spleeter 不会重复下载模型**
+
+1. 根据情况选择是否安装 spleeter，如果在虚拟环境中安装了 spleeter，请激活虚拟环境再执行 python 代码
+
+2. 在 Github spleeter 项目右边的 “Releases - +1 releases” 中下载我们需要用到的 `2stems.tar.gz`，并解压
+
+3. 在命令行中 `cd` 到 `Spleeter` 这个文件夹：`cd Spleeter`。
+
+4. 对 `separate.py` 文件的两个变量 `wav_dir` 和 `output_dir` 进行更改，分别用待分离的所有 wav 所在的文件夹，和结果输出到的文件夹表示
+5. 执行 `separate.py`：
+
+```python
+python ./separate.py
+```
+
+
+
+
 
 
 
