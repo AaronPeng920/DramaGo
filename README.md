@@ -115,7 +115,15 @@ python3 Spliter/cut_audio.py
 python ./separate.py
 ```
 
+6. 事先创建两个文件夹，分别用来保存所有的伴奏和所有的人声；
+7. 进行人声和伴奏的分别提取和合并，在 `extract_merge.py` 中更改三个参数，`dir_path` 改为上一步 spleeter 后的保存的文件夹，它下面有很多子目录，每首曲子就是一个子目录，每个子目录下分别是 `accompaniment.wav` 和 `vocals.wav`；`accompany_dir` 改为**事先创建**的保存所有的伴奏的文件夹；`vocals_dir` 改为**事先创建**的保存所有人声的文件夹；执行  `extract_merge.py`：
 
+```
+python ./extract_merge.py
+```
+
+8. 将保存所有伴奏的文件夹更名为 `粤剧批次?伴奏`，将保存所有人声的文件夹更名为 `粤剧批次?人声`，其中 `?` 表示你所处理的批次，之后将两个文件夹压缩即可
+9. 经过上一步操作，spleeter 产生结果的目录经过文件的移动均变成了空文件夹，可以将其删除
 
 
 
