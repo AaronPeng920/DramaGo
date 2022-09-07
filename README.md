@@ -104,7 +104,7 @@ python3 Spliter/cut_audio.py
 
 1. 根据情况选择是否安装 spleeter，如果在虚拟环境中安装了 spleeter，请激活虚拟环境再执行 python 代码
 
-2. 在 Github spleeter 项目右边的 “Releases - +1 releases” 中下载我们需要用到的 `2stems.tar.gz`，并解压
+2. 在 Github spleeter 项目右边的 “Releases - +1 releases” 中下载我们需要用到的 `2stems.tar.gz`，放置在 `DramaGo/Spleeter/pretrained_models/2stems` 下并解压
 
 3. 在命令行中 `cd` 到 `Spleeter` 这个文件夹：`cd Spleeter`。
 
