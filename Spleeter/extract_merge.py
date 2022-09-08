@@ -33,9 +33,9 @@ def extractMerge(dir_path, acc_path, vocals_path, type="a"):
 
 
 if __name__ == "__main__":
-    dir_path = "/Volumes/LenovoDisk/戏曲数据集/分离的粤剧/批次1"     # 待提取合并的文件夹的路径
-    accompany_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧批次1伴奏"     # 存放所有伴奏的文件夹
-    vocals_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧批次1人声"   # 存放所有人声的文件夹
+    dir_path = "/Volumes/LenovoDisk/戏曲数据集/分离的粤剧/guidang_output"     # 待提取合并的文件夹的路径
+    accompany_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧批次6伴奏"     # 存放所有伴奏的文件夹
+    vocals_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧批次6人声"   # 存放所有人声的文件夹
 
 
     acc_count, vocal_count = extractMerge(dir_path, accompany_dir, vocals_dir,"b")
