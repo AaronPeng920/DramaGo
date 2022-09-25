@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from scipy.fft import fft
 
 """
-单通道频域波形图，频域波形
+频谱图，单通道频域波形图，频域波形，主要通过快速傅里叶变换
 x 轴: 频率
 y 轴：振幅
 """
@@ -22,13 +22,14 @@ def displaySpectrum(filepath, savepath):
     :filepath 音频文件路径
     :savepath 绘制的图的保存路径
     """
+    plt.clf()
     x, sr = librosa.load(filepath, sr=16000)
     print("[频域谱线]采样点数 %s, 采样率 %s" % (len(x), sr))
     # ft = librosa.stft(x)
     # magnitude = np.abs(ft)  # 对fft的结果直接取模（取绝对值），得到幅度magnitude
     # frequency = np.angle(ft)  # (0, 16000, 121632)
 
-    ft = fft(x)
+    ft = fft(x)   # 傅里叶变换
     # print(len(ft), type(ft), np.max(ft), np.min(ft))
     magnitude = np.absolute(ft)  # 对fft的结果直接取模（取绝对值），得到幅度magnitude
     frequency = np.linspace(0, sr, len(magnitude))  # (0, 16000, 121632)

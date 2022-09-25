@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from scipy.fft import fft
 
 """
-单通道频谱图，基于短时傅里叶变换
+声谱图，单通道声谱图，基于短时傅里叶变换
 x 轴: 时间
 y 轴：频率
 色彩：给定时刻给定频率下的振幅
@@ -23,6 +23,8 @@ def displaySpectrogram(filepath, savepath):
     :filepath 音频文件路径
     :savepath 绘制的图的保存路径
     """
+    plt.clf()
+    print(filepath)
     x, sr = librosa.load(filepath, sr=16000)
 
     # compute power spectrogram with stft(short-time fourier transform):
