@@ -40,9 +40,15 @@ def displaySpectrum(filepath, savepath):
     # plot spectrum，限定[:40000]
     # plt.figure(figsize=(18, 8))
     plt.plot(frequency[:40000], magnitude[:40000])  # magnitude spectrum
-    plt.title("语音信号频域谱线")
-    plt.xlabel("频率（赫兹）")
-    plt.ylabel("幅度")
+
+    # plt.title("语音信号频域谱线")
+
+    # plt.xlabel("频率（赫兹）")
+    plt.xlabel("Frequency(Hz)")
+
+    # plt.ylabel("幅度")
+    plt.ylabel("Amplitude")
+
     plt.savefig(savepath, dpi=600)
 
     # # plot spectrum，不限定 [对称]

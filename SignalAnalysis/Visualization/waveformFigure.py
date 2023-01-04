@@ -31,14 +31,14 @@ def displayWaveform(filepath, savepath):
 
     plt.plot(time, samples)
 
-    plt.title("语音信号时域波形")
+    # plt.title("语音信号时域波形")
     # plt.title("Voice signal time domain waveform")
 
-    plt.xlabel("时长（秒）")
-    # plt.xlabel("time(s)")
+    # plt.xlabel("时长（秒）")
+    plt.xlabel("Time(s)")
 
-    plt.ylabel("振幅")
-    # plt.ylabel("amplitude")
+    # plt.ylabel("振幅")
+    plt.ylabel("Amplitude")
 
     # plt.savefig("your dir\语音信号时域波形图", dpi=600)
     plt.savefig(savepath, dpi=600)

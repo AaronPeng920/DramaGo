@@ -34,7 +34,13 @@ def displaySpectrogram(filepath, savepath):
     # show
     librosa.display.specshow(spectrogram, y_axis='log')
     plt.colorbar(format='%+2.0f dB')
-    plt.title('语音信号对数谱图')
-    plt.xlabel('时长（秒）')
-    plt.ylabel('频率（赫兹）')
+
+    # plt.title('语音信号对数谱图')
+
+    # plt.xlabel('时长（秒）')
+    plt.xlabel("Time(s)")
+
+    # plt.ylabel('频率（赫兹）')
+    plt.ylabel("Frequency(Hz)")
+
     plt.savefig(savepath, dpi=600)

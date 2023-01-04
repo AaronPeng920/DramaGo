@@ -17,10 +17,10 @@ def file_name(file_dir):
     return L
 
 if __name__ == "__main__":
-    songdir = "/Volumes/LenovoDisk/戏曲数据集/GTZAN小样"
-    wavformdir = "/Users/aaronpeng/Desktop/戏曲/DramaGo/Statistic/GTZAN/waveform"
-    specdir = "/Users/aaronpeng/Desktop/戏曲/DramaGo/Statistic/GTZAN/spectrum"
-    spectdir = "/Users/aaronpeng/Desktop/戏曲/DramaGo/Statistic/GTZAN/spectrogram"
+    songdir = "/Users/aaronpeng/Desktop/戏曲/实验分析/GTZAN伴奏"
+    wavformdir = "/Users/aaronpeng/Desktop/戏曲/DramaGo/Statistic/实验分析/GTZAN伴奏/waveform"
+    specdir = "/Users/aaronpeng/Desktop/戏曲/DramaGo/Statistic/实验分析/GTZAN伴奏/spectrum"
+    spectdir = "/Users/aaronpeng/Desktop/戏曲/DramaGo/Statistic/实验分析/GTZAN伴奏/spectrogram"
     index = 0
     files = file_name(songdir)
     result = {}
