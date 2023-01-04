@@ -65,7 +65,7 @@ python3 Adapter/converter.py
 
 > 静音去除的原理是找到连续的大于 10 个静音帧并删除（由 **mute_remove/utils line 25** 中的 **frame_threshold** 参数指定，如果你觉得去除不干净，可以尝试减小这个参数）
 
-1. 将所有需要去除静音的 **.wav** 文件存放在 **Audios/sources** 中
+1. 将所有需要去除静音的 **.wav** 文件存放在 **Audios/sources** 中；
 2. 在 **Mute_remove/removeMute.py** 中，找到 **__main__**，其中有两个参数 **wav_dir** 和 **output_dir**，将它们分别改成 **Audios/sources** 和 **Audios/slience_remove**，也就是原音频所在的位置和去除静音后音频存放的位置
 3. 执行 python 文件 **Mute_remove/removeMute.py**，如果你在命令行中，可以将此项目作为工作目录，执行：
 
@@ -78,7 +78,8 @@ python3 Mute_remove/removeMute.py
 > 将音频切割成 30s 长的片段，为了便于后续的使用，会改变切割后音频的命名。例如对于一个名称为 **a.wav** 的 **粤剧**，设将其分为 100 个片段（如果最后一个片段不足指定长度会舍弃），分割后的各个片段的名称会是 **yueju.a.00000.wav** 到 **yueju.a.00099.wav**，分别是 **类别.文件名.片段序号.wav**。
 
 1. 上一步得到的文件存放在 **Audios/slience_remove** 中，找到 **Spliter/cut_audio** 文件，其中 **main** 中含有两个参数，分别是 **wav_dir** 和 **output_dir**，将它们分别改成  **Audios/slience_remove** 和 **Audios/audio_cut**，也就是去除静音后的音频所在的位置和切分后的音频片段存放的位置，将 **category** 改为操作的剧种的名称拼音，如 **粤剧(yueju)**；
-2. 执行 python 文件 **Spliter/cut_audio.py**，如果你在命令行中，可以将此项目作为工作目录，执行：
+2. 如果想要改变切割的时长，可以在 **Spliter/cut_audio.py** 中使用的 **audiocutplus** 函数中指定参数 **cuttime=指定的时长单位为秒**；
+3. 执行 python 文件 **Spliter/cut_audio.py**，如果你在命令行中，可以将此项目作为工作目录，执行：
 
 ```python
 python3 Spliter/cut_audio.py
