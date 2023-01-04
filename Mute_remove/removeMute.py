@@ -15,8 +15,8 @@ def file_name(file_dir):
     return L
 
 if __name__ == '__main__':
-    wav_dir = "/Volumes/LenovoDisk/戏曲/豫剧/sources"  # 需要去除空白的 wav 文件所在的文件夹
-    output_dir = "/Volumes/LenovoDisk/戏曲/豫剧/slience_remove"    # 去除空白后的文件存储的位置
+    wav_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧/原粤剧分离/粤剧分离批次2伴奏"  # 需要去除空白的 wav 文件所在的文件夹
+    output_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧/原粤剧去静音"    # 去除空白后的文件存储的位置
 
     wav_files = file_name(wav_dir)  # 获取文件夹内的所有语音文件
     # 对每一个文件进行操作
