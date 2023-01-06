@@ -96,7 +96,10 @@ def audiocutplus(filename, outdir, category, cuttime = 30, overlaprate = 0):
     StepTotalNum = 0  # 当前进行到的采样数
 
     for j in range(int(cutNum)):
-        outfilename = '.'.join((category, name.split('.')[0], filenameGenerator(j), "wav"))
+        namesplit = name.split('.')[:-1]
+        nm = '.'.join(namesplit)  # 除了扩展名的名字
+        outfilename = '.'.join((nm,filenameGenerator(j),"wav"))
+        # outfilename = '.'.join((category, name.split('.')[0], filenameGenerator(j), "wav"))
         FileName = os.path.join(outdir,outfilename)
         # temp_dataTemp = temp_data[stepNum * j:stepNum * (j + 1)]
         temp_dataTemp = temp_data[ShiftFrameNum * j:ShiftFrameNum * j + CutFrameNum]

@@ -10,14 +10,14 @@ def file_name(file_dir):
     L = []
     for root, dirs, files in os.walk(file_dir):
         for file in files:
-            if os.path.splitext(file)[1] == '.wav':
+            if os.path.splitext(file)[1] == '.wav' and file[0] != '.':
                 filename = os.path.join(root, file)
                 L.append(filename)
     return L
 
 if __name__ == '__main__':
-    wav_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧/原粤剧去静音"  # 需要切分的 wav 文件所在的文件夹
-    output_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧/原粤剧一分钟"    # 切分后的文件存储的位置
+    wav_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧/原粤剧伴奏十分钟去静音"  # 需要切分的 wav 文件所在的文件夹
+    output_dir = "/Volumes/LenovoDisk/戏曲数据集/粤剧/原粤剧伴奏一分钟去静音"    # 切分后的文件存储的位置
     category = "yueju"  # 处理的音频种类
 
     stafilename = os.path.join("Statistic",category+".txt") # 统计数据文件名称
@@ -28,7 +28,7 @@ if __name__ == '__main__':
         # 切分
         # cutNum = audiocut(filename, output_dir, category)
         try:
-            cutNum = audiocutplus(filename, output_dir, category, 600)
+            cutNum = audiocutplus(filename, output_dir, category, 60)
             writecontent.append(filename + "," + str(cutNum) + "\n")
         except Exception as e:
             print(filename + "[Error]")
